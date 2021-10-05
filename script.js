@@ -30,7 +30,7 @@ var getTravel = function (place) {
                     var apiUrlTwo = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + data[0].lat + '&lon=' + data[0].lon + '&appid=c3e83b5a2578b3ee1dad8bfa2622f702' //array bracket notation
                     fetch(apiUrlTwo) //feeding second api with lat + lon
                         .then(function (dataTwo) {
-                            dataTwo.json().then(function (jsondata) {
+                            dataTwo.json().then(function (jsondata) { //jsondata.city.daily[0]
                                 console.log(jsondata);
                             })
 
@@ -43,17 +43,17 @@ var getTravel = function (place) {
 };
 
 var displayForecast = function (city, searchTerm) { //forecast
-    if (city.length === 0) {
+    if (city === 0) {
         cityContainerEl.textContent = 'No city matched that search'; //city
-        return;
+        //   return;
+        //uhhhhhhh
     }
 
     citySearchTerm.textContent = searchTerm; //city
 
     //for (var i = 0; i < cities.length; i++) {
-    //  var cityName = cities[i].lat [long] + '/' + cities[i].name; //here
+    //    var cityName = cities[i].lat[long] + '/' + cities[i].name; //here
 
-    // We create those URLs when we write the repos to the page in the displayRepos() function, as shown in the following code:
     var cityEl = document.createElement('a'); //city
     cityEl.classList = 'list-item flex-row justify-space-between align-center'; //city
     cityEl.setAttribute('href', './single-repo.html?repo=' + cityName); //city reponame? html?
@@ -63,7 +63,6 @@ var displayForecast = function (city, searchTerm) { //forecast
     cityEl.appendChild(titleEl); //city
     var statusEl = document.createElement('span');
     cityEl.appendChild(statusEl); //city
-
     cityContainerEl.appendChild(cityEl);//city
 }
 
