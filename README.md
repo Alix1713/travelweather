@@ -16,7 +16,7 @@ and longitude and feeds it into another api for results.
 
 ## Deployed Link
 
-* [See Live Site](#)
+* [See Live Site](https://alix1713.github.io/travelweather/)
 
 
 ## Authors
@@ -32,4 +32,5 @@ and longitude and feeds it into another api for results.
 I would like to thank my tutor for finding the {} I forgot to take off the API key
 Cheng for helping me with my json 
 AskBCS for helping me get it from 1970 to current day
+Also the book Javascript and Jquery by Jon Duckett for being a great reference guide
 
