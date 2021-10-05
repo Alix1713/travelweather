@@ -27,13 +27,13 @@ var getTravel = function (place) {
                 response.json().then(function (data) {
                     console.log(data);
                     //                  displayForecast(data, place); //forecast
-                    var apiUrlTwo = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + data[0].lat + '&lon=' + data[0].lon + '&appid=c3e83b5a2578b3ee1dad8bfa2622f702' //array bracket notation
+                    var apiUrlTwo = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + data[0].lat + '&lon=' + data[0].lon + '&appid=c3e83b5a2578b3ee1dad8bfa2622f702&units=imperial' //array bracket notation
                     fetch(apiUrlTwo) //feeding second api with lat + lon
                         .then(function (dataTwo) {
                             dataTwo.json().then(function (jsondata) { //jsondata.city.daily[0]
                                 console.log(jsondata);
+                                forecast(jsondata.daily[0])
                             })
-
                         })
                 })
             } else {
@@ -41,23 +41,34 @@ var getTravel = function (place) {
             }
         });
 };
+var forecast = function (currentForecast) {
+    console.log(currentForecast);
+    var currentWeatherContainer = `
+    <div class="card">
+  <div class="card-body">
+    <h5 class="card-title">${new Date(currentForecast.dt * 1000).toLocaleDateString()}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Low Temp: ${new (currentForecast.daily.temp.min).toLocaleDateString()}</h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+    `
+    cityContainerEl.innerHTML = currentWeatherContainer
+}
+//{
+//   "dt": 1633374000,
+// "temp": {
+//     "day": 298.74,
+//     "min": 290.24,
+//     "max": 300.57,
+
 
 var displayForecast = function (city, searchTerm) { //forecast
     if (city === 0) {
         cityContainerEl.textContent = 'No city matched that search'; //city
-        //   return;
-        //uhhhhhhh
+
     }
-
     citySearchTerm.textContent = searchTerm; //city
-
-    //for (var i = 0; i < cities.length; i++) {
-    //    var cityName = cities[i].lat[long] + '/' + cities[i].name; //here
-
     var cityEl = document.createElement('a'); //city
-    cityEl.classList = 'list-item flex-row justify-space-between align-center'; //city
-    cityEl.setAttribute('href', './single-repo.html?repo=' + cityName); //city reponame? html?
-
     var titleEl = document.createElement('span'); //title
     titleEl.textContent = cityName;  //cityname
     cityEl.appendChild(titleEl); //city
@@ -68,9 +79,3 @@ var displayForecast = function (city, searchTerm) { //forecast
 
 inputFormEl.addEventListener('submit', formSubmitHandler); //input form
 
-
-//need something to convert lat and long to place name
-//    var apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + place + '/&appid=0a5f5b7f09f88b7816e900fb3bf640c4'; //did I add key right
-
-//http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key}
-//http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=60.99&lon=30.9&dt=1586468027&appid={API key}

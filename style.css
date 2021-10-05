@@ -34,6 +34,7 @@
     line-height: 1.25;
     font-style: italic;
     padding: 25px;
+    border-radius: 15px 50px;
   }
   
   main {
@@ -100,6 +101,7 @@
     background-image: url(cloud.jpg);
     background-size: cover;
     color: var(--primary);
+    
   }
   
   .hero p {
