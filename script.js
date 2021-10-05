@@ -31,7 +31,7 @@ var formSubmitHandler = function (event) { //done
 };
 
 var getTravel = function (place) {
-    var apiUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=' + place + '&appid=c3e83b5a2578b3ee1dad8bfa2622f702'; //lat and long
+    var apiUrl = 'https://api.openweathermap.org/geo/1.0/direct?q=' + place + '&appid=c3e83b5a2578b3ee1dad8bfa2622f702'; //lat and long
 
 
     fetch(apiUrl)
