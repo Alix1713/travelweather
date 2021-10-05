@@ -96,7 +96,7 @@ var displayForecast = function (city, searchTerm) { //forecast
 }
 
 inputFormEl.addEventListener('submit', formSubmitHandler); //input form
-myStorage = window.localStorage;
-localStorage.setItem('Forecast');
-Storage.setItem(forecast);
+//myStorage = window.localStorage;
+//localStorage.setItem('Forecast');
+//Storage.setItem(forecast);
 
