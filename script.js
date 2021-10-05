@@ -1,3 +1,16 @@
+// GIVEN a weather dashboard with form inputs
+// WHEN I search for a city
+// THEN I am presented with current and future conditions for that city and that city is added to the search history
+// WHEN I view current weather conditions for that city
+// THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+// WHEN I view the UV index
+// THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
+// WHEN I view future weather conditions for that city
+// THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
+// WHEN I click on a city in the search history
+// THEN I am again presented with current and future conditions for that city
+
+
 var inputFormEl = document.querySelector('#input-form'); //done
 var placeInputEl = document.querySelector('#place'); //done
 var cityContainerEl = document.querySelector('#city-container'); //done
@@ -46,9 +59,13 @@ var forecast = function (currentForecast) {
     var currentWeatherContainer = `
     <div class="card">
   <div class="card-body">
-    <h5 class="card-title">${new Date(currentForecast.dt * 1000).toLocaleDateString()}</h5>
-    <h6 class="card-subtitle mb-2 text-muted">Low Temp: ${new (currentForecast.daily.temp.min).toLocaleDateString()}</h6>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title">Forecast for : ${new Date(currentForecast.dt * 1000).toLocaleDateString()}</h5>
+    <h6 class="card-subtitle mb-2">Low Temp: </h6>
+    <h6 class="card-subtitle mb-2">High Temp: </h6>
+    <h6 class="card-subtitle mb-2">UV Index: </h6>
+    <h6 class="card-subtitle mb-2">Wind Speed: </h6>
+    <h6 class="card-subtitle mb-2">Humidity: </h6>
+    
   </div>
 </div>
     `
@@ -61,6 +78,7 @@ var forecast = function (currentForecast) {
 //     "min": 290.24,
 //     "max": 300.57,
 
+//how do I loop this??!?!?!?!?!! I need 7 days not one
 
 var displayForecast = function (city, searchTerm) { //forecast
     if (city === 0) {
@@ -78,4 +96,7 @@ var displayForecast = function (city, searchTerm) { //forecast
 }
 
 inputFormEl.addEventListener('submit', formSubmitHandler); //input form
+myStorage = window.localStorage;
+localStorage.setItem('Forecast');
+Storage.setItem(forecast);
 
