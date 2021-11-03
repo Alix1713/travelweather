@@ -11,7 +11,21 @@
 // THEN I am again presented with current and future conditions for that city
 
 
-var inputFormEl = document.querySelector('#input-form'); //done
+//these are called "DATA TYPES" CORE CONCEPT : NEED TO GET THESE DOWN
+// var string = 'trying to understand string vs array'
+// var array = ['cat', string, 2] //NEEDS THOSE QUOTES, number not in quotes
+// var object = {key:'value'} //label is the key right hand side is the value
+// var object = {cat: 'tabby', color: 'orange', owners: ['alix', 'kate']} //example
+// var number = 1 //primitive holds one value
+// var boolean = true //primitive
+//primitive data types have a simple value, string, number, boolean, undefined, null 
+//complex data types arrays and objects
+
+var inputFormEl = document.querySelector('#input-form'); //statement keyword var is variable whats after is my call of variable
+//equal sign is the assignment of the var, document is an object that has built in functions
+//query selector targets the element and gets the element back
+//if its part of an object its called a method
+//it takes in an argument of the string and returns it
 var placeInputEl = document.querySelector('#place'); //done
 var cityContainerEl = document.querySelector('#city-container'); //done
 var citySearchTerm = document.querySelector('#city-search-term'); //done
@@ -23,6 +37,9 @@ var formSubmitHandler = function (event) { //done
 
     if (location) { //var
         getTravel(location); //var & travel
+        //when this is called it immediately starts reading the getTravel function "call a function" 
+        //once it goes through the function it goes to the next line
+        //it runs line by line unless it calls a function, then it jumps and comes back
         cityContainerEl.textContent = ''; //city
         placeInputEl.value = ''; //place
     } else {
@@ -35,6 +52,11 @@ var getTravel = function (place) {
 
 
     fetch(apiUrl)
+        //fetch deals with asyncronous (sp?) code
+        //fetch is a "get method" that returns a promise
+        //promise to consume data when it comes back
+        //has to have a function to run when the data comes back
+
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (data) {
@@ -55,17 +77,16 @@ var getTravel = function (place) {
         });
 };
 var forecast = function (currentForecast) {
-    console.log(currentForecast);
+    console.log(currentForecast.temp.min);
     var currentWeatherContainer = `
     <div class="card">
   <div class="card-body">
     <h5 class="card-title">Forecast for : ${new Date(currentForecast.dt * 1000).toLocaleDateString()}</h5>
-    <h6 class="card-subtitle mb-2">Low Temp: </h6>
-    <h6 class="card-subtitle mb-2">High Temp: </h6>
-    <h6 class="card-subtitle mb-2">UV Index: </h6>
-    <h6 class="card-subtitle mb-2">Wind Speed: </h6>
-    <h6 class="card-subtitle mb-2">Humidity: </h6>
-    
+    <h6 class="card-subtitle mb-2">Low Temp: ${currentForecast.temp.min}</h6>
+    <h6 class="card-subtitle mb-2">High Temp:${currentForecast.temp.max} </h6>
+    <h6 class="card-subtitle mb-2">UV Index: ${currentForecast.uvi}</h6>
+    <h6 class="card-subtitle mb-2">Wind Speed: ${currentForecast.wind_speed}</h6>
+    <h6 class="card-subtitle mb-2">Humidity:${currentForecast.humidity} </h6>
   </div>
 </div>
     `
@@ -73,7 +94,7 @@ var forecast = function (currentForecast) {
 }
 //{
 //   "dt": 1633374000,
-// "temp": {
+// "temp": {                  ///THIS IS AN OBJECCCCTTTT!!!!!
 //     "day": 298.74,
 //     "min": 290.24,
 //     "max": 300.57,
