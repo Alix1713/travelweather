@@ -81,15 +81,13 @@ var getTravel = function (place) {
 };
 var forecast = function (forecastWeek) {
   console.log(forecastWeek);
-  var returnString = "";
+  var returnString = ""
   for (var i = 0; i < forecastWeek.length; i++) {
     var forecast = forecastWeek[i];
     var currentWeatherContainer = `
     <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Forecast for : ${new Date(
-      currentForecast.dt * 1000
-    ).toLocaleDateString()}</h5>
+    <h5 class="card-title">Forecast for : ${new Date(forecast.dt * 1000).toLocaleDateString()}</h5>
     <h6 class="card-subtitle mb-2">Low Temp: ${forecast.temp.min}</h6>
     <h6 class="card-subtitle mb-2">High Temp:${forecast.temp.max} </h6>
     <h6 class="card-subtitle mb-2">UV Index: ${forecast.uvi}</h6>
@@ -97,20 +95,11 @@ var forecast = function (forecastWeek) {
     <h6 class="card-subtitle mb-2">Humidity:${forecast.humidity} </h6>
   </div>
 </div>
-    `;
+`
     returnString += currentWeatherContainer;
   }
-  cityContainerEl.innerHTML = currentWeatherContainer;
+  cityContainerEl.innerHTML = returnString;
 };
-//{
-//   "dt": 1633374000,
-// "temp": {                  ///THIS IS AN OBJECCCCTTTT!!!!!
-//     "day": 298.74,
-//     "min": 290.24,
-//     "max": 300.57,
-
-//how do I loop this??!?!?!?!?!! I need 7 days not one
-
 var displayForecast = function (city, searchTerm) {
   //forecast
   if (city === 0) {

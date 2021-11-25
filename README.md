@@ -5,7 +5,7 @@ and longitude and feeds it into another api for results.
 
 ## Code Snip
 ![Site](./images/snip.png)
-
+Using one api to feed the other latitude and longitude.
 
 
 ## Built With
@@ -21,9 +21,9 @@ and longitude and feeds it into another api for results.
 
 ## Authors
 
-* **YOUR NAME** 
+* **Alix Friedman** 
 
-- [Link to Portfolio Site](#)
+
 - [Link to Github](https://github.com/alix1713)
 - [Link to LinkedIn](https://www.linkedin.com/in/alix1713/)
 
