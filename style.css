@@ -160,7 +160,7 @@
   
   .card-body {
     padding: 2.5%;
-    background-image: url(cloud.jpg);
+    background-color: var(--primary);
   }
   
   /* FORM */

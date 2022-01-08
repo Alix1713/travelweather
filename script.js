@@ -10,16 +10,6 @@
 // WHEN I click on a city in the search history
 // THEN I am again presented with current and future conditions for that city
 
-//these are called "DATA TYPES" CORE CONCEPT : NEED TO GET THESE DOWN
-// var string = 'trying to understand string vs array'
-// var array = ['cat', string, 2] //NEEDS THOSE QUOTES, number not in quotes
-// var object = {key:'value'} //label is the key right hand side is the value
-// var object = {cat: 'tabby', color: 'orange', owners: ['alix', 'kate']} //example
-// var number = 1 //primitive holds one value
-// var boolean = true //primitive
-//primitive data types have a simple value, string, number, boolean, undefined, null
-//complex data types arrays and objects
-
 var inputFormEl = document.querySelector("#input-form"); //statement keyword var is variable whats after is my call of variable
 //equal sign is the assignment of the var, document is an object that has built in functions
 //query selector targets the element and gets the element back
@@ -81,13 +71,15 @@ var getTravel = function (place) {
 };
 var forecast = function (forecastWeek) {
   console.log(forecastWeek);
-  var returnString = ""
+  var returnString = "";
   for (var i = 0; i < forecastWeek.length; i++) {
     var forecast = forecastWeek[i];
     var currentWeatherContainer = `
     <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Forecast for : ${new Date(forecast.dt * 1000).toLocaleDateString()}</h5>
+    <h5 class="card-title">Forecast for : ${new Date(
+      forecast.dt * 1000
+    ).toLocaleDateString()}</h5>
     <h6 class="card-subtitle mb-2">Low Temp: ${forecast.temp.min}</h6>
     <h6 class="card-subtitle mb-2">High Temp:${forecast.temp.max} </h6>
     <h6 class="card-subtitle mb-2">UV Index: ${forecast.uvi}</h6>
@@ -95,7 +87,7 @@ var forecast = function (forecastWeek) {
     <h6 class="card-subtitle mb-2">Humidity:${forecast.humidity} </h6>
   </div>
 </div>
-`
+`;
     returnString += currentWeatherContainer;
   }
   cityContainerEl.innerHTML = returnString;
