@@ -7,7 +7,7 @@ Once it retrieves the coordinates another function makes an api call to Open Wea
 Out of the forecast array I have chosen to include the low temp, high temp, uv index wind speed and humidity. 
 
 ## Code Snip
-![Site](./images/snip.png)
+![Site](snip.png)
 Using one api call to feed the second call latitude and longitude.
 
 
