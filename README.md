@@ -3,7 +3,7 @@ This is a Weather app to get a 7 day forecast.
 
 ## Functionality
 It uses the Open weather api to search a city and fetch geographical coordinates (latitude, longitude).
-Once it retrieves the coordinates another function makes another api call to Open Weather for the forecast. 
+Once it retrieves the coordinates another function makes an api call to Open Weather for the forecast. 
 Out of the forecast array I have chosen to include the low temp, high temp, uv index wind speed and humidity. 
 
 ## Code Snip
@@ -32,5 +32,5 @@ Using one api call to feed the second call latitude and longitude.
 
 ## Acknowledgments
 
-I would like to thank my class TA for finding the { missing when I was troubleshooting deployemnt issues.
+I would like to thank my class TA for finding the { missing when I was troubleshooting deployment issues.
 
