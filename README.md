@@ -8,14 +8,14 @@ Out of the forecast array I have chosen to include the low temp, high temp, uv i
 
 ## Code Snip
 ![Site](snip.png)
-Using one api to feed the other latitude and longitude.
+Using one api call to feed the second call latitude and longitude.
 
 
 ## Built With
  
 * [One Call Api](https://openweathermap.org/api/one-call-api)
 * [BootStrap](https://getbootstrap.com/docs/4.0/components/card/) 
-* [CSS-Variables] (https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+* [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
 * [Javascript Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 * [Unix-Timestamp](https://www.unixtimestamp.com/)
 
@@ -25,9 +25,7 @@ Using one api to feed the other latitude and longitude.
 * [See Live Site](https://alix1713.github.io/travelweather/)
 
 
-## Author
-
-* **Alix Friedman** 
+## Author **Alix Friedman** 
 
 - [Link to Github](https://github.com/alix1713)
 - [Link to LinkedIn](https://www.linkedin.com/in/alix1713/)
